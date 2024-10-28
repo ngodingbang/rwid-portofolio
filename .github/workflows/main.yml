@@ -24,7 +24,8 @@ jobs:
           teamId: ${{ secrets.VERCEL_TEAM_ID }} # optional, without will use personal
           projectName: rwid-portofolio # project name in Vercel
           envVariableKeys: "APP_URL,\
-            NEXT_PUBLIC_GOOGLE_ANALYTICS_ID"
+            NEXT_PUBLIC_GOOGLE_ANALYTICS_ID,\
+            ENABLE_EXPERIMENTAL_COREPACK"
         env:
           APP_URL: ${{ vars.APP_URL }}
           TARGET_APP_URL: preview,development,production
@@ -33,6 +34,10 @@ jobs:
           NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: ${{ vars.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID }}
           TARGET_NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: preview,development,production
           TYPE_NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: encrypted
+
+          ENABLE_EXPERIMENTAL_COREPACK: ${{ vars.ENABLE_EXPERIMENTAL_COREPACK }}
+          TARGET_ENABLE_EXPERIMENTAL_COREPACK: preview,development,production
+          TYPE_ENABLE_EXPERIMENTAL_COREPACK: encrypted
 
       - uses: amondnet/vercel-action@v25.2.0
         with:
