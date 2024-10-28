@@ -1,42 +1,43 @@
-name: Build
+# https://dev.to/chuddyjoachim/nextjs-ci-cd-on-vercel-with-github-actions-7g7
+name: Deploy to Vercel
 
 on:
   push:
     branches:
-      - main
-      - develop
-
-  workflow_dispatch:
-
-env:
-  NODE_VERSION: 20.18.0
-  PNPM_VERSION: 9.12.2
+      - "main"
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
-    env:
-      APP_URL: ${{ secrets.APP_URL }}
-      NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID }}
+    permissions:
+      contents: write
+      deployments: write
+      pull-requests: write
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v2
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
+      - uses: dkershner6/vercel-set-env-action@v3.0.3
         with:
-          version: ${{ env.PNPM_VERSION }}
+          token: ${{ secrets.VERCEL_TOKEN }}
+          teamId: ${{ secrets.VERCEL_TEAM_ID }} # optional, without will use personal
+          projectName: rwid-portofolio # project name in Vercel
+          envVariableKeys: "APP_URL,\
+            NEXT_PUBLIC_GOOGLE_ANALYTICS_ID"
+        env:
+          APP_URL: ${{ vars.APP_URL }}
+          TARGET_APP_URL: preview,development,production
+          TYPE_APP_URL: encrypted
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+          NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: ${{ vars.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID }}
+          TARGET_NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: preview,development,production
+          TYPE_NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: encrypted
+
+      - uses: amondnet/vercel-action@v25.2.0
         with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: "pnpm"
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Build with Next.js
-        run: pnpm run build
+          vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
+          github-token: ${{ secrets.GITHUB_TOKEN }} # Optional
+          vercel-args: "--prod" # Optional
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID}} # Required
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}} # Required

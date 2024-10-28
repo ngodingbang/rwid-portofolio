@@ -2,7 +2,7 @@
 
 [![License](https://badgen.net/github/license/ngodingbang/rwid-portofolio "License")](LICENSE.md)
 [![Release](https://badgen.net/github/release/ngodingbang/rwid-portofolio "Release")](https://github.com/ngodingbang/rwid-portofolio/releases)
-[![Build](https://github.com/ngodingbang/rwid-portofolio/actions/workflows/main.yml/badge.svg "Build")](https://github.com/ngodingbang/rwid-portofolio/actions/workflows/main.yml)
+[![Deploy to Vercel](https://github.com/ngodingbang/rwid-portofolio/actions/workflows/main.yml/badge.svg "Deploy to Vercel")](https://github.com/ngodingbang/rwid-portofolio/actions/workflows/main.yml)
 
 This is a repository of portofolio page template for RWID member using [Next.js](https://nextjs.org) intended for personal use only. The site is forked from the incredible [Tailwind-Nextjs-Starter-Blog](https://github.com/timlrx/tailwind-nextjs-starter-blog) by [Tim Lrx](https://github.com/timlrx). Check out [the parent repository documentation](https://github.com/timlrx/tailwind-nextjs-starter-blog/blob/main/README.md) or fork this project to start building your own portofolio.
 
