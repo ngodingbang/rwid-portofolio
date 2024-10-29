@@ -13,3 +13,4 @@ All notable changes to `RWID Portofolio Template` will be documented in this fil
 - cd: setup deployment on vercel using github actions by [@ngodingbang](https://github.com/ngodingbang) in [#a7072ba](https://github.com/ngodingbang/rwid-portofolio/commit/a7072ba64ad43c9336d80764e2f21b7e843946ce).
 - fix: set ENABLE_EXPERIMENTAL_COREPACK env vars to prevent pnpm engine unsupported when deploying on vercel by [@ngodingbang](https://github.com/ngodingbang) in [#7237fe3](https://github.com/ngodingbang/rwid-portofolio/commit/7237fe3e7bdaaff50c9380878dfafea61aa3c982).
 - chore: change opengraph image by [@ngodingbang](https://github.com/ngodingbang) in [#46e77c4](https://github.com/ngodingbang/rwid-portofolio/commit/46e77c42cccabaa01a8731ad28f771f541c0c5dc).
+- refactor: remove unused env config by [@ngodingbang](https://github.com/ngodingbang) in [#db6fd67](https://github.com/ngodingbang/rwid-portofolio/commit/db6fd672f936abdc851d4de60e0696864481a943).
