@@ -1,6 +1,6 @@
 import CopyPlugin from "copy-webpack-plugin";
 import { createRequire } from "node:module";
-import path from "path";
+import path from "node:path";
 import env from "./src/utils/env.mjs";
 
 /** @type {import("next").NextConfig} */
