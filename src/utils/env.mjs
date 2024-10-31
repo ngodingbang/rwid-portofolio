@@ -5,7 +5,7 @@ export const envSchema = z.object({
     .enum(["development", "production"])
     .transform((value) => value || "production"),
   APP_URL: z.string().transform((value) => value || "https://localhost:3000"),
-  NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: z.string(),
+  NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: z.string().optional(),
 });
 
 // Prevent default process.env.NODE_ENV to be parsed on next.config.mjs
