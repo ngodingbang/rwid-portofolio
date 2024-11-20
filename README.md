@@ -15,7 +15,7 @@ This blog was developed with:
 
 ## Requirement
 
-- [![Node.js](https://img.shields.io/badge/Node.js_22.11.0-43853D?style=for-the-badge&logo=node.js&logoColor=white "Node.js")](https://nodejs.org)
+- [![Node.js](https://img.shields.io/badge/Node.js_20.18.0-43853D?style=for-the-badge&logo=node.js&logoColor=white "Node.js")](https://nodejs.org)
 - [![pnpm](https://img.shields.io/badge/pnpm_9.14.1-F69220?style=for-the-badge&logo=pnpm&logoColor=white "pnpm")](https://pnpm.io)
 - [![PostgreSQL](https://img.shields.io/badge/PostgreSQL_17.0-316192?style=for-the-badge&logo=postgresql&logoColor=white "PostgreSQL")](https://www.postgresql.org)
 
@@ -25,6 +25,7 @@ To get started using this app in your localhost, simply paste this command into 
 
 ```bash
 git clone https://github.com/ngodingbang/rwid-portofolio.git
+cp .env.example .env.local
 pnpm install
 ```
 
