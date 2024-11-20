@@ -15,8 +15,8 @@ This blog was developed with:
 
 ## Requirement
 
-- [![Node.js](https://img.shields.io/badge/Node.js_20.18.0-43853D?style=for-the-badge&logo=node.js&logoColor=white "Node.js")](https://nodejs.org)
-- [![pnpm](https://img.shields.io/badge/pnpm_9.12.2-F69220?style=for-the-badge&logo=pnpm&logoColor=white "pnpm")](https://pnpm.io)
+- [![Node.js](https://img.shields.io/badge/Node.js_22.11.0-43853D?style=for-the-badge&logo=node.js&logoColor=white "Node.js")](https://nodejs.org)
+- [![pnpm](https://img.shields.io/badge/pnpm_9.14.1-F69220?style=for-the-badge&logo=pnpm&logoColor=white "pnpm")](https://pnpm.io)
 
 ## Installation
 
