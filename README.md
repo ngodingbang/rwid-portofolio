@@ -17,6 +17,7 @@ This blog was developed with:
 
 - [![Node.js](https://img.shields.io/badge/Node.js_22.11.0-43853D?style=for-the-badge&logo=node.js&logoColor=white "Node.js")](https://nodejs.org)
 - [![pnpm](https://img.shields.io/badge/pnpm_9.14.1-F69220?style=for-the-badge&logo=pnpm&logoColor=white "pnpm")](https://pnpm.io)
+- [![PostgreSQL](https://img.shields.io/badge/PostgreSQL_17.0-316192?style=for-the-badge&logo=postgresql&logoColor=white "PostgreSQL")](https://www.postgresql.org)
 
 ## Installation
 
@@ -26,6 +27,18 @@ To get started using this app in your localhost, simply paste this command into 
 git clone https://github.com/ngodingbang/rwid-portofolio.git
 pnpm install
 ```
+
+## Preparing The Database
+
+Run migrations and seeder by execute the command below.
+
+```bash
+pnpm run migrate:dev:local
+# or
+pnpm run migrate:reset:local -- --skip-seed # Add flag "--skip-seed" to run the migration without seeding and flag "--source_path=YOUR_ENV_PATH" to change the default .env path value.
+```
+
+> Note: This is a development command and should never be used in a production environment. Please use `pnpm exec prisma migrate deploy` for testing an production environment. Read [prisma migrate documentation][prisma-migrate-documentation-url] for further information.
 
 ## Getting Started
 

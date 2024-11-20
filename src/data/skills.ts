@@ -1,10 +1,6 @@
-import { IconType } from "react-icons/lib";
-import * as Si from "react-icons/si";
-import * as Tb from "react-icons/tb";
-
 export type Skill = {
   name: string;
-  logo: IconType;
+  icon_url: string;
   url?: string;
 };
 
@@ -15,22 +11,22 @@ export type SkillWithChildren = Skill & {
 const skills: Array<SkillWithChildren> = [
   {
     name: "JavaScript",
-    logo: Si.SiJavascript,
+    icon_url: "/me.png",
     url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     children: [
       {
         name: "TypeScript",
-        logo: Si.SiTypescript,
+        icon_url: "/me.png",
         url: "https://www.typescriptlang.org",
       },
       {
         name: "Node.js",
-        logo: Si.SiNodedotjs,
+        icon_url: "/me.png",
         url: "https://nodejs.org/en",
       },
       {
         name: "Express",
-        logo: Si.SiExpress,
+        icon_url: "/me.png",
         url: "https://expressjs.com",
       },
     ],
@@ -38,16 +34,16 @@ const skills: Array<SkillWithChildren> = [
 
   {
     name: "Database",
-    logo: Tb.TbDatabase,
+    icon_url: "/me.png",
     children: [
       {
         name: "mySQL",
-        logo: Si.SiMysql,
+        icon_url: "/me.png",
         url: "https://www.mysql.com",
       },
       {
         name: "PostgreSQL",
-        logo: Si.SiPostgresql,
+        icon_url: "/me.png",
         url: "https://www.postgresql.org",
       },
     ],
@@ -55,7 +51,7 @@ const skills: Array<SkillWithChildren> = [
 
   {
     name: "Git",
-    logo: Si.SiGit,
+    icon_url: "/me.png",
     url: "https://github.com/about",
   },
 ];

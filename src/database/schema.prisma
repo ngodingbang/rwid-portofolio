@@ -1,0 +1,32 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DB_URL")
+  directUrl = env("DB_URL_NON_POOLING")
+}
+
+model Skill {
+  id        String  @id @default(uuid()) @db.Char(36)
+  parent_id String? @db.Char(36)
+
+  name     String  @unique @db.VarChar(255)
+  url      String? @db.VarChar
+  icon_url String? @db.VarChar
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  parent   Skill?  @relation("SkillParentChildren", fields: [parent_id], references: [id])
+  children Skill[] @relation("SkillParentChildren")
+
+  @@map("skills")
+}

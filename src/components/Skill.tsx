@@ -1,39 +1,11 @@
 "use client";
 
-import AnimationHover from "@/components/ui/AnimationHover";
-import OptionalLink from "@/components/ui/OptionalLink";
-import skills, { type Skill } from "@/data/skills";
+import Badge from "@/components/ui/Badge";
+import skills from "@/data/skills";
 import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import { RoughNotation } from "react-rough-notation";
 import colors from "tailwindcss/colors";
-
-function Badge(props: {
-  resolvedTheme?: string;
-  isParent: boolean;
-  skill: Skill;
-}) {
-  const { resolvedTheme, isParent, skill } = props;
-
-  return (
-    <OptionalLink href={skill.url} target="_blank" rel="noopener noreferrer">
-      <AnimationHover
-        title={skill.name}
-        className={`group flex origin-center transform items-center justify-center gap-4 rounded-lg ${!props.isParent ? "border border-gray-300 dark:border-gray-500" : "border-b border-b-gray-300 dark:border-b-gray-500"} p-4 sm:justify-start md:origin-top`}
-        resolvedTheme={resolvedTheme}
-      >
-        <div className="pointer-events-none relative select-none transition group-hover:scale-110 sm:group-hover:scale-100">
-          <skill.logo className="h-8 w-8" />
-        </div>
-        <p
-          className={`pointer-events-none ${isParent && "hidden"} select-none text-sm font-semibold sm:inline-flex md:text-base`}
-        >
-          {skill.name}
-        </p>
-      </AnimationHover>
-    </OptionalLink>
-  );
-}
 
 export default function Skill() {
   const { resolvedTheme } = useTheme();

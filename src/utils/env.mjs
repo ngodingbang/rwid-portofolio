@@ -5,6 +5,11 @@ export const envSchema = z.object({
     .enum(["development", "production"])
     .transform((value) => value || "production"),
   APP_URL: z.string().transform((value) => value || "https://localhost:3000"),
+  API_URL: z
+    .string()
+    .transform((value) => value || "https://localhost:3000/api"),
+  DB_URL: z.string(),
+  DB_URL_NON_POOLING: z.string(),
   NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: z.string().optional(),
 });
 
